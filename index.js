@@ -1,6 +1,5 @@
-document.getElementById('get-Data').addEventListener('click', obtainData);
-
-document.getElementById('postData').addEventListener('submit', sendData);
+document.getElementById('get-data').addEventListener('click', obtainData);
+document.getElementById('post-data').addEventListener('submit', sendData);
 
 function obtainData() {
 	// body...
@@ -10,31 +9,30 @@ function obtainData() {
 			let answer = '<h2> Comments from a user </h2>';
 			const {id, name, email, body} = data;
 			answer +=
-				`<section>
-				 <h4> User ID: ${id} </h4>
-				 	<ul>
-				 		<li> User's Name: ${name} </li>
-				 		<li> User's Email: ${email} </li>
-				 		<li> User's Body: ${body}</li>
-				 	</ul>
-				 </section>`;
+			`<section>
+				<h4> User ID: ${id} </h4>
+				<ul>
+					<li> User's Name: ${name} </li>
+					<li> User's Email: ${email} </li>
+					<li> User's Body: ${body}</li>
+				</ul>
+			</section>`;
 			document.getElementById('hello').innerHTML = answer;
 		})
-		// .then(json => console.log(json))
-}
+	}
 
 function sendData() {
 	event.preventDefault();
 	
-	let daHead = document.getElementById('daHead').value;
-	let daBody = document.getElementById('daBody').value;
+	let daHead = document.getElementById('da-head').value;
+	let daBody = document.getElementById('da-body').value;
 
 	fetch('https://jsonplaceholder.typicode.com/posts', {
 		method: 'POST',
 		headers: {
 			"content-type":"application/json; charset=UTF-8"
 		},
-		body: JSON.stringify({daHead:daHead, daBody:daBody})
+		body: JSON.stringify({dahead:daHead, dabody:daBody})
 	}).then(response => response.json())
 	.then(data => {
 		document.getElementById('hi').innerHTML = "Success!";

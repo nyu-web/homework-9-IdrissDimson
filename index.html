@@ -2,20 +2,24 @@
 <html>
 <head>
 	<meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>My Server</title>
 	<link rel="stylesheet" href="style.css">
+	<script type="text/javascript" src="index.js" defer="defer"></script>
 </head>
 <body>
 	<h1>Fun with APIs</h1>
-	<button id="get-Data">Some API data :P</button>
+	<button id="get-data">Some API data :P</button>
 	<p id="hello"></p>
-	<form id="postData">
-		<input type="text" name="Title" id="daHead">
-		<textarea name="Body" id="daBody"></textarea>
+	<form id="post-data">
+		<label for="da-head">Title</label>
+		<input type="text" name="Title" id="da-head">
+
+		<label for="da-body">Body</label>
+		<textarea name="Body" id="da-body"></textarea>
+
 		<input type="submit" value="send answers">
 	</form>
 	<p id="hi"></p>
-	<script type="text/javascript" src="index.js"></script>
 </body>
 </html>
