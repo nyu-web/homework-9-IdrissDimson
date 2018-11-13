@@ -8,7 +8,7 @@ function obtainData() {
 		.then(response => response.json())
 		.then(data => {
 			let answer = '<h2> Comments from a user </h2>';
-			const {postid, id, name, email, body} = data;
+			const {id, name, email, body} = data;
 			answer +=
 				`<section>
 				 <h4> User ID: ${id} </h4>
@@ -38,5 +38,4 @@ function sendData() {
 		console.log(data);
 		document.getElementById('hi').innerHTML = "Success!";
 	})
-	.catch(err => console.log(err))
 }
