@@ -1,4 +1,4 @@
-document.getElementById('getData').addEventListener('click', obtainData);
+document.getElementById('get-Data').addEventListener('click', obtainData);
 
 document.getElementById('postData').addEventListener('submit', sendData);
 
@@ -35,7 +35,6 @@ function sendData() {
 		body: JSON.stringify({daHead:daHead, daBody:daBody})
 	}).then(response => response.json())
 	.then(data => {
-		console.log(data);
 		document.getElementById('hi').innerHTML = "Success!";
 	})
 }
