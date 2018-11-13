@@ -13,7 +13,7 @@ function obtainData() {
 				`<section>
 				 <h4> User ID: ${id} </h4>
 				 	<ul>
-				 		<li> User's Name: ${id} </li>
+				 		<li> User's Name: ${name} </li>
 				 		<li> User's Email: ${email} </li>
 				 		<li> User's Body: ${body}</li>
 				 	</ul>
@@ -31,7 +31,9 @@ function sendData() {
 
 	fetch('https://jsonplaceholder.typicode.com/posts', {
 		method: 'POST',
-		headers: new Headers(),
+		headers: {
+			"content-type":"application/json; charset=UTF-8"
+		},
 		body: JSON.stringify({daHead:daHead, daBody:daBody})
 	}).then(response => response.json())
 	.then(data => {
